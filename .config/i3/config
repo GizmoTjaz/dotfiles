@@ -300,7 +300,7 @@ assign [class="Code"] $ws3
 #assign [class="Gnome-terminal"] $ws3
 
 # Wallpaper
-exec_always feh --bg-scale /home/remu/Pictures/wallpaper.png
+exec_always feh --bg-scale $HOME/Pictures/wallpaper.png
 
 # Displays
 exec_always xrandr --output DP-0 --off --output DVI-D-0 --off --output HDMI-1 --mode 2560x1440 --pos 1920x0 --rotate normal --output DP-1 --off --output HDMI-0 --mode 1920x1080 --pos 0x168 --rotate normal
