@@ -6,6 +6,8 @@ end
 
 function fish_prompt
 
+	set -U fish_greeting ""
+
 	# Colors
 	set -l cyan (set_color -o brblue)
 	set -l red (set_color -o red)
