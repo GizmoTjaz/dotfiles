@@ -10,3 +10,6 @@ end
 function lt
 	exa --classify --all --group-directories-first --sort=Name --icons --tree --level=2 --ignore-glob="node_modules|.git"
 end
+
+# Keep SSH agent running so you don't need to always type the passphrase
+eval (keychain --eval --agents ssh id_rsa)
