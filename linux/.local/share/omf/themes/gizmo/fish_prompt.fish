@@ -12,9 +12,18 @@ function fish_prompt
 	set -l green (set_color -o green)
 	set -l magenta (set_color -o magenta)
 	set -l normal (set_color normal)
+	
+	# Icons
+	set -l wsl "❖"
+	set -l home_dir "~"
+	set -l root "\$"
 
 	# Variables
-	set -l cwd $magenta(pwd | sed "s|^$HOME|wsl ~|i" | sed "s|^/mnt/c/Users/$USER|~|i")
+	set -l cwd $magenta(pwd | sed "s|^$HOME|$home_dir|i" | sed "s|^/mnt/c/Users/$USER|$wsl $home_dir|i")
+
+	if fish_is_root_user
+		echo -n $cyan($root) 	
+	end
 
 	#echo -e ''
 
@@ -25,6 +34,9 @@ function fish_prompt
 		echo -n -s " (" (_git_branch_name) ")"
 	end
 
-	echo -e -n -s " ➜ " $normal
+	# Next line
+	echo ""
+
+	echo -n "➜ " $normal
 
 end
