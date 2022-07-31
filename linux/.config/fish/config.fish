@@ -12,4 +12,4 @@ function lt
 end
 
 # Keep SSH agent running so you don't need to always type the passphrase
-eval (keychain --eval --agents ssh id_rsa)
+eval (keychain --eval --quiet --agents ssh id_rsa)
